@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary-color: #254d4d;
+  --text-dark: #171717;
+  --text-light: #737373;
+  --extra-light: #f4f6f5;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Merriweather", serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    transition: 0.3sec;
+}
+ul{
+    text-decoration: none;
+}
+li{
+    text-decoration: none;
+    list-style-type: none;
+}
+img{
+    display: flex;
+    width: 100%;
+}
+html,
+body{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "poppins", sans-serif;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    width: 100%;
+    z-index: 10;
+    padding: 1rem 1rem 0rem 0rem;
+}
+.nav_logo a{
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+.menu_bar{
+    display: none;
+}
+.nav_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+   
+}
+.nav_link{
+   /* position: absolute;
+    left: 50%;*/
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.nav_link a{
+    font-weight: 500;
+    white-space: nowrap;
+    color: var(--text-dark);
+}
+.search_bar {
+    position: absolute;
+    right: 10%;
+    /*flex: 1;*/
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .search_bar input {
+    padding-block: 5px;
+    outline: 0;
+    border: 0;
+    width: 0;
+    font-size: 1rem;
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--text-light);
+    transition: 0.3s;
+  }
+
+  .search_bar.open input {
+    width: 100%;
+    max-width: 15rem;
+  }
+
+  .search_bar span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    cursor: pointer;
+  }
+ @keyframes scroll {
+    to {
+      transform: translateX(calc(-50% - 4rem));
+    }
+  }
+    @media (max-width: 768px){
+            .nav_logo a{
+                color: var(--white);
+            }
+            .menu_bar{
+                display: flex;
+                color: var(--white);
+                font-size: 1.5rem;
+            }
+            /*.nav_link{
+                display: none;
+            }*/
+            .search_bar{
+                display: none;
+            }
+            .search_bar span{
+                display: none;
+            }
+            .nav_header{
+                width: 100%; /* Full width for smaller screens */
+                background-color: var(--primary-color); /* Background color for header */
+                padding: 0.5rem 1rem; /* Adjusted padding */
+                position: fixed; /* Fix the navbar at the top */
+                top: 0; /* Stick to the top */
+                left: 0; /* Align to the left */
+                z-index: 1000; /* Ensure it stays on top */
+              }
+              .nav_link {
+                display: none; /* Hide links by default */
+                flex-direction: column;
+                gap: 1rem;
+                position: absolute;
+                top: 100%; /* Position below the nav header */
+                left: 0;
+                width: 100%; /* Full width for the dropdown */
+                background-color: var(--white); /* Background for dropdown menu */
+                padding: 1rem 0;
+                z-index: 99; /* Ensure it's above other elements */
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow for visibility */
+                transition: 1s ease-in-out, opacity 1s ease-in-out; /* Smooth transition */
+            }
+            .nav_link.open {
+                display: flex; /* Show links when the class is toggled */
+                
+            }
+              .nav_link a {
+                font-size: 1.2rem;
+                color: var(--text-dark);
+              }
+              .search_bar {
+                display: none;
+              }
+              
+              
+        }
+/*hero-section*/
+/* Header Container */
+.header__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+  overflow: hidden;
+  max-width: 1250px;
+  margin-inline: auto;
+}
+
+/* Image Styling */
+.header__image {
+  grid-area: 1/1/2/2; /* Ensures image stays behind */
+}
+
+.header__image img {
+  max-width: 900px;
+  margin-inline: auto;
+  margin-right: 25px;
+  /*margin-right: 9rem;*/
+}
+
+/* Content Styling */
+.header__content {
+  grid-area: 1/1/2/2; /* Places content on top of the image */
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  padding-bottom: 7%;
+  font-family: var(--header-font);
+}
+
+.header__content > div {
+  max-width: 500px;
+  height: 500px;
+  padding: 4rem 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header__content h1 {
+  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.header__content p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+@media(max-width:768px){
+  .header__container{
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+  .header__content div{
+    padding: 4rem 2rem;
+  }
+  .header__image{
+    padding-top: 2rem;
+  }
+  .header__content{
+    padding: 0 5% 0 5%;
+  }
+}
+.deal_contain{
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+.main_deal{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.deal_card h2{
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--primary-color);
+}
+.deal_card span{
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-bottom: auto;
+}
+.deal_card h4{
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: auto;
+  color: var(--text-dark);
+}
+.deal_card p{
+  font-size: 1rem;
+  color: var(--text-light);
+}
+@media(max-width:768px){
+  .main_deal{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .deal_card h2{
+    font-size: 3rem;
+  }
+  .deal_card{
+    margin: 0rem 1rem 0rem 1rem;
+  }
+  .deal_card p{
+    margin: 0.5rem 0rem 0.5rem 0rem;
+  }
+}
