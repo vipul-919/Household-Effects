@@ -21,3 +21,4 @@ navSearch.addEventListener("click", (e) => {
   // Use "click" as the event type
   navSearch.classList.toggle("open");
 });
+
