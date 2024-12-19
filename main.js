@@ -22,3 +22,38 @@ navSearch.addEventListener("click", (e) => {
   navSearch.classList.toggle("open");
 });
 
+const scrollRevealOpction ={
+  distance: "50px",
+  origin: "bottom",
+  duration:1000,
+};
+ScrollReveal().reveal( ".header__image img",{
+  ...scrollRevealOpction,
+  origin:"right",
+});
+ScrollReveal().reveal(".header__content div",{
+  ...scrollRevealOpction,
+  duration:1000,
+  delay:500,
+});
+ScrollReveal().reveal(".header__content h1",{
+  ...scrollRevealOpction,
+  delay:1000,
+});
+ScrollReveal().reveal(".header__content p",{
+  ...scrollRevealOpction,
+  delay:1500,
+});
+ScrollReveal().reveal(".deal_card",{
+  ...scrollRevealOpction,
+  interval:500,
+});
+ScrollReveal().reveal(".about_contain img",{
+  ...scrollRevealOpction,
+  origin:"right",
+});
+ScrollReveal().reveal(".card_main .card",{
+  duration:1000,
+  interval:500,
+  delay:500,
+});
